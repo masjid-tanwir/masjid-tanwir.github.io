@@ -1,1 +1,128 @@
-<H1>Hello</H1>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payung Berkah – Masjid Tanwir Surabaya</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    body { margin: 0; font-family: 'Poppins', sans-serif; background:#f4f6f8; color:#222; }
+    header { background:linear-gradient(135deg,#0d0d0d,#1c1c1c); padding:90px 20px; text-align:center; color:white; }
+    header h1 { font-size:48px; margin:0; font-weight:700; }
+    header p { font-size:20px; margin:10px 0 30px; }
+    .btn { background:#2ecc71; padding:15px 30px; color:white; border-radius:12px; font-size:18px; text-decoration:none; font-weight:600; transition:.2s; }
+    .btn:hover { background:#27ae60; }
+
+    .section { max-width:1100px; margin:60px auto; padding:0 20px; }
+    .section h2 { font-size:32px; margin-bottom:20px; font-weight:700; }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+    .card { background:white; padding:25px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+    .card h3 { margin-top:0; font-size:22px; font-weight:600; }
+
+    .product-img { width:100%; max-width:520px; display:block; margin:40px auto; border-radius:20px; box-shadow:0 12px 28px rgba(0,0,0,.12); }
+
+    .price-box { background:white; padding:30px; border-radius:18px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,.08); }
+    .price-box h3 { margin:0; font-size:34px; font-weight:700; }
+    .price-box p { margin:8px 0; font-size:18px; }
+
+    footer { text-align:center; padding:40px 20px; color:#555; font-size:14px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>PAYUNG BERKAH</h1>
+    <p>Jamaah Masjid Tanwir Surabaya</p>
+    <p>Lindungi diri dari hujan, bantu bangun masjid dengan infaq.</p>
+    <a href="https://wa.me/62XXXXXXXXXXX" class="btn">Pesan Sekarang</a>
+</header>
+
+<section class="section">
+    <h2>Tentang Program</h2>
+    <p><strong>Payung Berkah</strong> adalah program merchandise resmi Masjid Tanwir Asemrowo Surabaya. 
+    Setiap pembelian payung otomatis menyumbang <strong>20% keuntungan bersih</strong> untuk Infaq Masjid.</p>
+</section>
+
+<section class="section">
+    <h2>Keunggulan Produk</h2>
+    <div class="features-grid">
+        <div class="card">
+            <h3>Premium & Anti-Angin</h3>
+            <p>Rangka kuat dan bahan berkualitas agar tahan cuaca.</p>
+        </div>
+        <div class="card">
+            <h3>Waterproof</h3>
+            <p>Melindungi maksimal dari hujan dengan coating anti air.</p>
+        </div>
+        <div class="card">
+            <h3>Desain Eksklusif</h3>
+            <p>Sablon awet bertuliskan "Jamaah Masjid Tanwir Surabaya".</p>
+        </div>
+        <div class="card">
+            <h3>Berinfaq Otomatis</h3>
+            <p>20% keuntungan langsung masuk kas infaq masjid.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Foto Produk</h2>
+    <img src="PAYUNG-BERKAH.png" class="product-img" alt="Payung Berkah Masjid Tanwir">
+</section>
+
+<section class="section">
+    <h2>Harga</h2>
+    <div class="price-box">
+        <h3>Rp xx.xxx</h3>
+        <p>Per unit</p>
+        <p><strong>20% keuntungan</strong> untuk Infaq Masjid Tanwir.</p>
+        <a href="https://wa.me/62XXXXXXXXXXX" class="btn">Pesan Sekarang</a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Pemesanan via WhatsApp</h2>
+    <p>Isi formulir di bawah, dan Anda akan otomatis diarahkan ke WhatsApp dengan format pesan siap terkirim.</p>
+
+    <form id="orderForm" class="card" style="max-width:600px; margin:auto;">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" required style="width:100%; padding:12px; margin:8px 0 18px; border-radius:10px; border:1px solid #ccc;">
+
+        <label>Alamat</label>
+        <textarea id="alamat" required style="width:100%; padding:12px; margin:8px 0 18px; border-radius:10px; border:1px solid #ccc;"></textarea>
+
+        <label>Jumlah Pemesanan</label>
+        <input type="number" id="jumlah" required min="1" style="width:100%; padding:12px; margin:8px 0 18px; border-radius:10px; border:1px solid #ccc;">
+
+        <button type="button" class="btn" onclick="sendWA()">Kirim via WhatsApp</button>
+    </form>
+
+    <script>
+    function sendWA() {
+        const nama = document.getElementById('nama').value;
+        const alamat = document.getElementById('alamat').value;
+        const jumlah = document.getElementById('jumlah').value;
+        const nomor = '62XXXXXXXXXXX'; // ganti dengan nomor WA Anda
+
+        const pesan = `Assalamu'alaikum, saya ingin memesan Payung Berkah.%0A%0A` +
+                      `Nama: ${nama}%0A` +
+                      `Alamat: ${alamat}%0A` +
+                      `Jumlah: ${jumlah} pcs`;
+
+        window.open(`https://wa.me/${nomor}?text=${pesan}`, '_blank');
+    }
+    </script>
+</section>
+
+<section class="section">
+    <h2>Hubungi Kami</h2>
+    <p>📲 WhatsApp: <strong>(nomor Anda)</strong></p>
+    <p>📍 Masjid Tanwir Asemrowo, Surabaya</p>
+</section>
+
+<footer>
+    © 2025 – Program Payung Berkah Masjid Tanwir Surabaya
+</footer>
+
+</body>
+</html>
